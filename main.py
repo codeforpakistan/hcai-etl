@@ -57,8 +57,8 @@ while True:
             )
             sub["hospitalName"] = hospital_and_dept_ward_dict[str(sub["hospitalId"])]
         except Exception as e:
-            print(sub, e)
-            break
+            print("Exception", str(e))
+            pass
 
     # creating a dataframe of the submissions and applying some transformations
     submissions_df = pd.DataFrame(submissions).fillna("")
