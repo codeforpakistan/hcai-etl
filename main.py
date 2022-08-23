@@ -19,6 +19,8 @@ db = client["hcai"]
 
 while True:
 
+    print("Fetching data for ETL")
+
     # fetching hospitals and departments
     hospitals = list(db.hospitals.find({}))
     hospital_and_dept_ward_dict = {}
@@ -110,5 +112,7 @@ while True:
         resize=False,
     )
 
+    print("Data push successfull!")
+    print("Next run will be in 60 mins.")
     # wait for 60 mins
     time.sleep(60 * 60)
